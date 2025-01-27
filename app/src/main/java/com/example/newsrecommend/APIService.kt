@@ -7,12 +7,12 @@ import retrofit2.http.Query
 
 data class ArticleResponse(
 
-    val paignation: paignation,
+    val pagination: Pagination,
     val data: List<Article>
 
 )
 
-data class paignation(
+data class Pagination(
 
     val limit: Int,
     val offset: Int,
@@ -28,9 +28,11 @@ data class Article(
     val category: String?,
     val country: String?,
     val language: String?,
-    val url: String?
+    val url: String?,
+    val title: String?
 
 )
+
 
 
 interface MediaStackAPIService {
@@ -38,7 +40,7 @@ interface MediaStackAPIService {
     @GET("news")
     suspend fun getArticle(
         @Query("access_key") apiKey: String,
-        @Query("query") keywords: String
+        @Query("categories") category: String
 
     ): ArticleResponse
 
