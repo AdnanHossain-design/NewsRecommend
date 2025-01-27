@@ -1,25 +1,32 @@
 
 # News Recommend
-News Recommend is an Android application designed to use machine learning to recommend articles from the internet based on user preferences. The app currently fetches articles by category using an external API, with plans to incorporate advanced personalization features.
-
+News Recommend is an Android application designed to recommend articles from the internet based on user preferences. The app currently fetches articles by hardcoded categories and displays clickable titles that open the articles in the default browser. The project also includes plans to integrate advanced personalization features powered by a Python machine learning model.
 
 
 
 
 ## Features
 
-- Modern UI with Material Design 3: A clean interface with edge-to-edge support and Compose UI.
-- Article Fetching by Category: Currently supports fetching articles in predefined categories such as "technology."
-- Toast Notifications: Informs users of successful or failed article retrievals.
+-Modern UI: A clean and simple interface.
+
+-Article Fetching by Category: Fetches 8 articles from hardcoded categories (e.g., "sports") and displays their titles.
+
+-Clickable Article Titles: Users can click on a title to open the article in their default browser.
+
+-Future Personalization: Planned integration of a Python machine learning model to recommend articles based on region, age, and gender.
+
+-The model will analyze user reading habits and demographics to offer personalized suggestions.
+
+-Articles will become more tailored as the user engages with specific categories.
 
 
 
 ## Built With
 
- - Kotlin
- - Android Jetpack Compose
- - Retrofit for networking
- - Material Design 3
+ - Kotlin: Core language for Android development.
+-Android View System: Directly using XML layouts instead of Jetpack Compose.
+-Retrofit: For networking and API integration.
+
 
 
 
@@ -47,16 +54,24 @@ Open the project in Android Studio.
 
 Get your API key from News API, and replace the placeholder key in MainActivity:
 
-val apiKey = "YOUR_API_KEY_HERE"
-
 Build and run the project on an Android device or emulator.
 
 ## Usage
 
 Launch the app on your device.
 
-View a greeting message on the home screen.
+Articles will automatically fetch from the default hardcoded category (e.g., "sports").
 
-Articles will automatically fetch for the "technology" category.
+View the list of 8 article titles.
 
-If successful, a toast will notify you of the fetched articles.
+Click on a title to open the article in your default browser.
+
+## Planned Updates
+
+-Python Machine Learning Integration:
+ Build a Python-based recommendation model to analyze user preferences.
+ Recommend articles based on region, age, and gender.
+ Dynamically adjust recommendations as users read more articles.
+
+-Dynamic Categories:
+ Transition from hardcoded categories to dynamic category selection in the app.
